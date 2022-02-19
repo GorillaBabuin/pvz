@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 
+			margin-left: 600px;	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			margin-left: 1500px;	
+		}
+		.score{
+ 
+		}
+		.scorebanner{
+		 position: absolute;
+		 margin-left: 825px;
+		 margin-top: 50px;
+		 color: white;
+		}
+		.win{
+			background-image: url(win.jpg);
+        	height: 1000px;
+        	width: 2000px;
+        	display: none;
+        	position: absolute;
+        	background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>	
+	<div class="win"></div>
+	<div class="box" style="">
+		
+		<h1 class="scorebanner score">0</h1>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; ">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; ">
+		<img class="shooter" src="peashooter.png"  style="top: 650px; ">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px">
+		<img class="zombies" src="zombie2.png" style="top: 320px">
+		<img class="zombies" src="zombie2.png" style="top: 420px">
+		<img class="zombies" src="zombie4.png" style="top: 520px">
+		<img class="zombies" src="zombie4.png" style="top: 620px">
+	</div>
+<script>
+	let zombies = document.querySelectorAll('.zombies') 
+	let shooters = document.querySelectorAll('.shooter') 
+    let score = 0
+    let shag1 = 1500
+    let shag2 = 1500
+    let shag3 = 1500
+    let shag4 = 1500
+    let shag5 = 1500
+    zombies[0].onclick = function() {
+      shag1 = shag1 - 100
+      console.log(shag1)
+      zombies[0].style.marginLeft = shag1 + 'px'
+      zombies[0].style.transition = '1s'
+      if(shag1 == 600){
+        score = score + 1
+        document.querySelector('.score').innerHTML = score;
+        shooters[0].style.display = 'none'
+      }
+      if(score==5){
+       
+		   document.querySelector('.box').style.display = 'none';
+		   document.querySelector('.win').style.display = 'block';
+	    }
+    }
+    zombies[1].onclick = function() {
+      shag2 = shag2 - 100
+      console.log(shag2)
+      zombies[1].style.marginLeft = shag2 + 'px'
+      zombies[1].style.transition = '1s'
+      if(shag2 == 600){
+        score = score + 1
+        document.querySelector('.score').innerHTML = score;
+        shooters[1].style.display = 'none'
+      }
+      if(score==5){
+		   document.querySelector('.box').style.display = 'none';
+		   document.querySelector('.win').style.display = 'block';
+	    }
+    }
+    zombies[2].onclick = function() {
+      shag3 = shag3 - 100
+      console.log(shag3)
+      zombies[2].style.marginLeft = shag3 + 'px'
+      zombies[2].style.transition = '1s'
+      if(shag3 == 600){
+        score = score + 1
+        document.querySelector('.score').innerHTML = score;
+        shooters[2].style.display = 'none'
+      }
+      if(score==5){
+		   document.querySelector('.box').style.display = 'none';
+		   document.querySelector('.win').style.display = 'block';
+	    }
+    }
+    zombies[3].onclick = function() {
+      shag4 = shag4 - 100
+      console.log(shag1)
+      zombies[3].style.marginLeft = shag4 + 'px'
+      zombies[3].style.transition = '1s'
+      if(shag4 == 600){
+        score = score + 1
+        document.querySelector('.score').innerHTML = score;
+        shooters[3].style.display = 'none'
+      }
+      if(score==5){
+		   document.querySelector('.box').style.display = 'none';
+		   document.querySelector('.win').style.display = 'block';
+	    }
+    }
+    zombies[4].onclick = function() {
+      shag5 = shag5 - 100
+      console.log(shag5)
+      zombies[4].style.marginLeft = shag5 + 'px'
+      zombies[4].style.transition = '1s'
+      if(shag5 == 600){
+        score = score + 1
+        document.querySelector('.score').innerHTML = score;
+        shooters[4].style.display = 'none'
+      }
+      if(score==5){
+		   document.querySelector('.box').style.display = 'none';
+		   document.querySelector('.win').style.display = 'block';
+	    }
+   }
+</script>
+</body>
+</html>
